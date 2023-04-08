@@ -58,35 +58,3 @@ Weapon.init(
 );
 
 export default Weapon;
-
-/*import { DataTypes, Model } from 'sequelize';
-import { sequelize } from '../databases/db';
-
-export class Weapon extends Model {
-    public id!: number;
-    public name!: string;
-    public description!: string;
-    public readonly createdAt!: Date;
-    public readonly updatedAt!: Date;
-}
-
-Weapon.init({
-    id: {
-        type: DataTypes.INTEGER.UNSIGNED,
-        autoIncrement: true,
-        primaryKey: true,
-    },
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    description: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-}, {
-    sequelize,
-    tableName: 'weapons',
-});
-
-Weapon.sync();*/

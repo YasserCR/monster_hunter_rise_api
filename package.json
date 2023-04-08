@@ -4,6 +4,7 @@
   "description": "A free API for Monster Hunter Rise Sunbreak",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "YasserCR",
