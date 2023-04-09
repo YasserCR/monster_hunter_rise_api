@@ -1,12 +1,12 @@
 import { Router, Request, Response } from 'express';
-import Monster from '../models/monsters.model';
+import Armor from '../models/armors.model';
 
 const router = Router();
 
 router.get('/', async (_req: Request, res: Response) => {
     try {
-        const monsters = await Monster.findAll();
-        res.json(monsters);
+        const armors = await Armor.findAll();
+        res.json(armors);
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
@@ -15,11 +15,11 @@ router.get('/', async (_req: Request, res: Response) => {
 
 router.get('/:id', async (req: Request, res: Response) => {
     try {
-        const monster = await Monster.findByPk(req.params.id);
-        if (monster) {
-            res.json(monster);
+        const armor = await Armor.findByPk(req.params.id);
+        if (armor) {
+            res.json(armor);
         } else {
-            res.status(404).json({ message: 'Monster not found' });
+            res.status(404).json({ message: 'Armor not found' });
         }
     } catch (err) {
         console.error(err);
@@ -27,4 +27,4 @@ router.get('/:id', async (req: Request, res: Response) => {
     }
 });
 
-export default router;
+module.exports = router

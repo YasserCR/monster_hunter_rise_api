@@ -1,12 +1,12 @@
 import { Router, Request, Response } from 'express';
-import Skill from '../models/skills.model';
+import Weapon from '../models/weapons.model';
 
 const router = Router();
 
 router.get('/', async (_req: Request, res: Response) => {
     try {
-        const skills = await Skill.findAll();
-        res.json(skills);
+        const weapons = await Weapon.findAll();
+        res.json(weapons);
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
@@ -15,11 +15,11 @@ router.get('/', async (_req: Request, res: Response) => {
 
 router.get('/:id', async (req: Request, res: Response) => {
     try {
-        const skill = await Skill.findByPk(req.params.id);
-        if (skill) {
-            res.json(skill);
+        const weapon = await Weapon.findByPk(req.params.id);
+        if (weapon) {
+            res.json(weapon);
         } else {
-            res.status(404).json({ message: 'Skill not found' });
+            res.status(404).json({ message: 'Weapon not found' });
         }
     } catch (err) {
         console.error(err);
@@ -27,4 +27,4 @@ router.get('/:id', async (req: Request, res: Response) => {
     }
 });
 
-export default router;
+module.exports = router;
