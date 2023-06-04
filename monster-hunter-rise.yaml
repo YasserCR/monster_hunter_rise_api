@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: Swagger de API de Monster Hunter Rise Sunbreak - OpenApi 3.0
+  description: Este documento tiene como fin ayudar a entender e, funcionamiento de la API a los desarrolladores y colaboradores.
+  contact:
+    email: yassros16@gmail.com
+  version: 1.0.0
+servers:
+  - url: localhost:3000/home
+paths: 
+  /skills:
+    get:
+      tags:
+        - skills 
+      summary: Obtener listadas todas las habilidades
+      operationId: getSkills
+      responses:
+        '200': 
+          description: Consulta exitosa
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Skill'  
+components:
+  schemas:
+    Skill:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 644850c2e1709441f15642ea
+        id:
+          type: integer
+          format: int32
+          example: 2
+        descripcion: 
+          type: string
+          example: Aumenta la fuerza de ataque y la afinidad cuando los mousntruos se enojan.
+        nombre: 
+          type: string
+          example: Instigador
+        nivel: 
+          type: object
+        
