@@ -22,7 +22,62 @@ paths:
               schema: 
                 type: array
                 items: 
-                  $ref: '#/components/schemas/Skill'  
+                  $ref: '#/components/schemas/Skill'
+        '500':
+          description: Error interno del servidor
+  /skills/{id}:
+    get:
+      tags:
+        - skills
+      summary: Obtener una habilidad por su id
+      operationId: getSkillById
+      parameters:
+        - name: id
+          in: path
+          description: ID de la habilidad deseada
+          required: true
+          schema: 
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Consulta exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Skill'
+        '400':
+          description: ID invalido
+        '404': 
+          description: Habilidad no encontrada
+  /skills/{nombre}/{nivel}:
+    get:
+      tags: 
+        - skills
+      summary: Obtiene el nivel de una habilidad por su nombre y nivel deseado
+      operationId: getSkillByNameAndLevel
+      parameters:
+        - name: nombre
+          in: path
+          description: Nombre de la habilidade deseada
+          required: true
+          schema: 
+            type: string
+        - name: level
+          in: path
+          description: Nivel de la habilidad deseada
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Consulta exitosa
+          content:
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/LevelSkill'
+
 components:
   schemas:
     Skill:
@@ -43,4 +98,12 @@ components:
           example: Instigador
         nivel: 
           type: object
-        
+          properties:
+            niveles:
+              type: object
+    LevelSkill:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Ataque +4 y afinidad +3% mientras esté activo
