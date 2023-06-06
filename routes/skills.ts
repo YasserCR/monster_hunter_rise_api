@@ -7,6 +7,6 @@ router.get('/', getAllSkillsController);
 
 router.get('/:id', getSkillByIdController);
 
-router.get('/name/:nombre/:nivel', getSkillByNameAndLevelController); // Ruta para buscar habilidad por nombre y nivel
+router.get('/:nombre/:nivel', getSkillByNameAndLevelController); // Ruta para buscar habilidad por nombre y nivel
 
 module.exports = router
