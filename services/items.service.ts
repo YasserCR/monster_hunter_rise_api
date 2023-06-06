@@ -1,4 +1,4 @@
-import Item from "../models/items.model";
+import Item from "../models/mysql/items.model";
 
 export async function getAllItems() {
     try {

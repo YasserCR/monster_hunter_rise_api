@@ -1,4 +1,4 @@
-import Armor from '../models/armors.model';
+import Armor from '../models/mysql/armors.model';
 
 export async function getAllArmors() {
     try {

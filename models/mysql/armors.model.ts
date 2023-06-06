@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import { sequelize } from '../utils/db';
+import { sequelize } from '../../utils/db';
 
 class Armor extends Model {
     public id!: number;

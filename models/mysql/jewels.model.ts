@@ -1,17 +1,19 @@
 import { Model, DataTypes } from 'sequelize';
-import { sequelize } from '../utils/db';
+import { sequelize } from '../../utils/db';
 
-class Item extends Model {
+class Jewel extends Model {
     public id!: number;
     public name!: string;
-    public description!: string;
+    public slotLevel!: number;
+    public skillName!: string;
+    public skillValue!: number;
     public rarity!: number;
 
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 }
 
-Item.init({
+Jewel.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -21,17 +23,25 @@ Item.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    description: {
-        type: DataTypes.TEXT,
+    slotLevel: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    skillName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    skillValue: {
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     rarity: {
         type: DataTypes.INTEGER,
         allowNull: false,
-    }
+    },
 }, {
     sequelize,
-    tableName: 'items',
+    tableName: 'jewels',
 });
 
-export default Item;
+export default Jewel;

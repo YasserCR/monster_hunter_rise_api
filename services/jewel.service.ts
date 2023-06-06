@@ -1,4 +1,4 @@
-import Jewel from "../models/jewels.model";
+import Jewel from "../models/mysql/jewels.model";
 
 export async function getAllJewels() {
     try {

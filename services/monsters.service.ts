@@ -1,4 +1,4 @@
-import Monster from "../models/monsters.model";
+import Monster from "../models/mysql/monsters.model";
 
 export async function getAllMonsters() {
     try {

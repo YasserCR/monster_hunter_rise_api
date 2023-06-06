@@ -1,4 +1,4 @@
-import Weapon from "../models/weapons.model";
+import Weapon from "../models/mysql/weapons.model";
 
 export async function getAllWeapons() {
     try {
