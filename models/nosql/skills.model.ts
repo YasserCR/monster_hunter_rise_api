@@ -16,13 +16,6 @@ const skillSchema = new Schema<ISkill>({
   nivel: { type: Object, required: true }
 }, { collection: 'skills' });
 
-skillSchema.methods.getNivel = function (nivel: string): number | null {
-    if (this.nivel.hasOwnProperty(nivel)) {
-      return this.nivel[nivel];
-    } else {
-      return null;
-    }
-  };
 
 const Skill = mongoose.model<ISkill>('Skill', skillSchema);
 
