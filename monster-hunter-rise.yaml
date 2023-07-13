@@ -6,7 +6,7 @@ info:
     email: yassros16@gmail.com
   version: 1.0.0
 servers:
-  - url: localhost:3000/home
+  - url: localhost:3000
 paths: 
   /skills:
     get:
