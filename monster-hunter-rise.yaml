@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Swagger de API de Monster Hunter Rise Sunbreak - OpenApi 3.0
-  description: Este documento tiene como fin ayudar a entender e, funcionamiento de la API a los desarrolladores y colaboradores.
+  description: Este documento tiene como fin ayudar a entender el funcionamiento de la API a los desarrolladores y colaboradores.
   contact:
     email: yassros16@gmail.com
   version: 1.0.0
